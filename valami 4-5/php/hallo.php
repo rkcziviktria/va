@@ -1,10 +1,10 @@
 <?php
 header('Content-Type: application/json');
 
-// Adatbázis kapcsolódási paraméterek
+
 $servername = "localhost";
-$username = "root"; // Az adatbázis felhasználóneved
-$password = "";     // Az adatbázis jelszavad
+$username = "root"; 
+$password = "";     
 $dbname = "your_database_name"; // Cseréld ki az adatbázisod nevére
 
 
