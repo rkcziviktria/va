@@ -53,30 +53,24 @@ public class main {
         } catch (FileNotFoundException e) {
             System.err.println("Hiba: A '" + filePath + "' fájl nem található.");
             System.err.println("Kérlek, ellenőrizd, hogy a fájl a megfelelő helyen van-e.");
-            return new ArrayList<>(); // Üres lista visszaadása hiba esetén
+            return new ArrayList<>(); 
         } catch (IOException e) {
             System.err.println("Hiba történt a fájl beolvasása során: " + e.getMessage());
             e.printStackTrace();
-            return new ArrayList<>(); // Üres lista visszaadása hiba esetén
+            return new ArrayList<>();
         }
         System.out.println("---");
         return munkavallalok;
     }
 
-    /**
-     * Kiírja a rendszerben regisztrált dolgozók számát.
-     * @param munkavallalok A munkavállalók listája.
-     */
+   
     private static void kiirDolgozokSzama(List<munkavallalo> munkavallalok) {
         System.out.println("2. feladat:");
         System.out.println("A rendszerben regisztrált dolgozók száma: " + munkavallalok.size());
         System.out.println("---");
     }
 
-    /**
-     * Kiírja az egyéni vállalkozók számát.
-     * @param munkavallalok A munkavállalók listája.
-     */
+    
     private static void kiirEgyeniVallalkozokSzama(List<munkavallalo> munkavallalok) {
         long egyeniVallalkozokSzama = munkavallalok.stream()
                 .filter(munkavallalo::isEgyeniVallalkozo)
@@ -86,11 +80,7 @@ public class main {
         System.out.println("---");
     }
 
-    /**
-     * Kiírja a megadott munkakörben dolgozók számát.
-     * @param munkavallalok A munkavállalók listája.
-     * @param munkakor A keresett munkakör.
-     */
+   
     private static void kiirMunkakorSzerintiLetszam(List<munkavallalo> munkavallalok, String munkakor) {
         long dolgozokSzamaAdottMunkakorben = munkavallalok.stream()
                 .filter(m -> munkakor.equalsIgnoreCase(m.getMunkakor()))
